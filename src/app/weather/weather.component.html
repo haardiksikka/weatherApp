@@ -1,0 +1,9 @@
+  <p> 
+     <span style="color:white"> {{weatherData.dt_txt | date : 'EEEE'}} </span> <br>
+      {{weatherData.weather[0].main}}<br>
+      <img src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png"> <br>
+      Temperature: {{weatherData.main.temp}}&#8451; 
+      <br> Humidity : {{weatherData.main.humidity}}%
+  </p>
+  
+

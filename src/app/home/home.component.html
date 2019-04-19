@@ -1,0 +1,27 @@
+
+
+     
+
+<form action="">
+    <input #box type="text" (keyup.enter)="getWeatherInfo(box.value)" placeholder="Enter City">
+  
+  <i class="fa fa-search"  (click)='getWeatherInfo(box.value)'></i>
+</form>
+<!-- <div *ngIf="search">
+  <h1 style="color:white; text-transform: capitalize">{{search}}'s Weather Forecast</h1>
+</div> -->
+
+  <div class="row">
+      <div class=" col widget-block" *ngIf="currentResult">
+          <h3 style="color:white; text-transform: capitalize">{{search}}'s Current Weather</h3>
+          <hr>
+          <app-current-weather [currentWeather]=currentResult></app-current-weather>
+          <h3 style="color:white; text-transform: capitalize">{{search}}'s Weather Forecast</h3>
+          <hr>
+     </div>
+
+      <div class="col-sm-2 widget-block" *ngFor='let i of weatherArray'>
+          <app-weather [weatherData]=i></app-weather>
+      </div>
+  </div>
+
